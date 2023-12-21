@@ -33,7 +33,6 @@ class GmailListFragment : Fragment() {
 
         binding.btnSortNewest.setOnClickListener {
             listOfEmails = listOfEmails.sortedByDescending { it.date }
-            println(listOfEmails)
             gmailAdapter = GmailAdapter(requireContext(),listOfEmails)
             binding.lvGmail.adapter = gmailAdapter
 
@@ -43,7 +42,6 @@ class GmailListFragment : Fragment() {
 
         binding.btnSortOldest.setOnClickListener {
             listOfEmails = listOfEmails.sortedBy { it.date }
-            println(listOfEmails)
             gmailAdapter = GmailAdapter(requireContext(),listOfEmails)
             binding.lvGmail.adapter = gmailAdapter
             gmailAdapter.notifyDataSetChanged()
